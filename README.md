@@ -7,7 +7,6 @@ Docker files to run different flavours of B3 in [Docker containers](http://docke
 | Dockerfile            |  description                               |
 |-----------------------|--------------------------------------------|
 | Dockerfile-b3         | B3 latest stable version                   |
-| Dockerfile-b3-1.10    | B3 latest dev version from the 1.10 branch |
 
 
 
@@ -22,11 +21,7 @@ Build the images
 ----------------
 
 ```bash
-docker build -t b3 https://raw.githubusercontent.com/thomasleveil/b3-Dockerfiles/master/b3-1.9/Dockerfile
-```
-
-```bash
-docker build -t b3-1.10 https://raw.githubusercontent.com/thomasleveil/b3-Dockerfiles/master/b3-1.10/Dockerfile
+docker build -t b3 github.com/pando85/b3-Dockerfiles
 ```
 
 
@@ -39,9 +34,4 @@ Run the containers
 
 ```bash
 docker run -d -v /home/yourname/b3-share:/root/b3 b3 --config root/b3/b3.xml
-```
-
-
-```bash
-docker run -d -v /home/yourname/b3-share:/root/b3 b3-1.10 --config root/b3/b3.xml
 ```
